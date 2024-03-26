@@ -7,7 +7,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from chromadb.config import Settings
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
-from constants import BEG_EN, DB_DIRECTORY, API_KEY
+from constants import DB_DIRECTORY, API_KEY
 
 CHROMA_SETTINGS = Settings(
     anonymized_telemetry=False,
