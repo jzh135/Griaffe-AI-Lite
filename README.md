@@ -9,5 +9,34 @@
 </ol>
 <p><strong>Explore Giraffe AI Lite and unlock the power of AI without the complexity! 🚀</strong>
 
+## Installation Guide
+### 1. Build environment
+#### 1.1 Download and install Anaconda from https://www.anaconda.com/
+#### 1.2 Create and activate python (version 3.10.0) virtual environment
+```
+conda create -n GiraffeAI python=3.10.0
+conda activate GiraffeAI
+```
+### 2. Setup Giraffe AI
+#### 2.1 Install all required libraries from requirements.txt
+```
+pip install -r requirements.txt
+```
+#### 2.2 OpenAI API 
+Create a .txt file in the current directory with your OpenAI API Key, rename the file to *openAI_API.txt*<br>
+OpenAI API price is listed on https://openai.com/pricing
+
+### 3. Launch Giraffe AI
+Run Giraffe_AI_run.py in your virtual environment
+```
+python Giraffe_AI_run.py
+```
+## Development Log
+### Version 1.0 (3/27/2024)
+- Databse: Chroma
+- Record management: document upload, removal and replacement
+- Source document format: .pdf/.txt
+- Embeddings: OpenAI text-embedding-3-small	
+- LLM: OpenAI GPT3.5-turbo
 
 
