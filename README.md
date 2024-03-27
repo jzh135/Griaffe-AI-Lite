@@ -1,4 +1,4 @@
-# Griaffe AI Lite
+# 🦒 Griaffe AI Lite 🦒
 ### Welcome to Giraffe AI Lite! An AI powered personal knowledge base system.<br>
 <p>The heart of Giraffe AI Lite lies in its retrieval-augmented generation approach. By combining retrieval-based techniques with generative models, it achieves accurate and flexible information synthesis. This project is specifically tailored for individuals who have <strong>no experience in AI application development</strong> and <strong>lack access to high-performance computing resources</strong>. 
 <p>Here are its key features:<br>
@@ -9,7 +9,7 @@
 </ol>
 <p><strong>Explore Giraffe AI Lite and unlock the power of AI without the complexity! 🚀</strong>
 
-## Installation Guide
+## 🛠️ Installation Guide 🛠️
 ### 1. Build environment
 #### 1.1 Download and install Anaconda from https://www.anaconda.com/
 #### 1.2 Create and activate python (version 3.10.0) virtual environment
@@ -31,7 +31,7 @@ Run Giraffe_AI_run.py in your virtual environment
 ```
 python Giraffe_AI_run.py
 ```
-## Development Log
+## 📓 Development Log 📓
 ### Version 1.0 (3/27/2024)
 - Databse: Chroma
 - Record management: document upload, removal and replacement
