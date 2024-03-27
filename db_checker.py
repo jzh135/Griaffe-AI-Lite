@@ -1,7 +1,6 @@
 import os
 import csv
 
-#from model_loader import db
 from constants import REPORT_DIRECTORY
 
 def generate_report(db):
@@ -36,3 +35,18 @@ def len_of_db(db):
     doc_list = db.get()
     ids_list = doc_list["ids"]
     print(f"There are {len(ids_list)} slices of documents in the database")
+
+def remove_docs(db, target_title):
+    doc_list = db.get()
+    # Load ids list
+    ids_list = doc_list["ids"]
+    # Load metadata list of dictionaries
+    meta_list = doc_list["metadatas"]
+    # Load each item's list from metadata
+    title_list = [item["title"] for item in meta_list]
+    target_ids = []
+    for i in range(len(title_list)):
+        if target_title == title_list[i]:
+            target_ids.append(ids_list[i])
+    db.delete(target_ids)
+    print(f"{len(target_ids)} slices of documents are removed from the vector database")
