@@ -6,13 +6,9 @@ from constants import SOURCE_DIRECTORY, METADATA_INFO_GENERAL
 from db_builder_tools import db_update, metadata_file_generator
 from chatbot_tools import chatbot_qa_chain
 from doc_retriever_tools import self_query_retriever
-from db_checker import generate_report, len_of_db
+from db_checker import generate_report, len_of_db, remove_docs
 welcome_message = """
 🦒 Welcome to Giraffe AI Lite! 🦒
-I’m your trusty digital giraffe here to assist you with precision and accuracy. 
-As a RAG system, I rely on our local database to provide spot-on answers to your 
-queries. Whether it’s facts, trivia, or practical advice, I’ve got it covered!
-Let’s explore the vast savanna of knowledge together! 🌟🦒
 """
 
 goodbye_message = """
@@ -20,17 +16,21 @@ goodbye_message = """
 """
 main_message = """
 🦒 Main Menu 🦒
-1. Database Builder
-2. Document Retrieval
-3. Talk to GG
-d. Developer mode 
+1. Document Retrieval
+2. Talk to GG
+3. Database Builder
+4. Database Manager 
 """
 
 def main_menu():
     while True:
         print(main_message)
-        selection = input("Please enter your selection (1/2/3) or exit: ")
+        selection = input("Please enter your selection (1/2/3/d) or exit: ")
         if selection == '1':
+            doc_retrive_menu()
+        elif selection == '2':
+            chatbot_menu()
+        elif selection == '3':
             metadata_file_generator(SOURCE_DIRECTORY)
             user_message = input("\nTake your time to fill the metadata form!\nWhen you are ready, please enter 'yes' to continue: ")
             if user_message is not None:
@@ -39,18 +39,17 @@ def main_menu():
                 db_update(db=db, source_directory=SOURCE_DIRECTORY)
                 current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 print('end', f"\n{current_time} > Database is updated\n")
-        elif selection == '2':
-            doc_retrive_menu()
-        elif selection == "3":
-            chatbot_menu()
-        elif selection == "d":
+        elif selection == "4":
             len_of_db(db)
-            usr_report = input("Please enter 'yes' to generate full report: ")
-            if usr_report == "yes":
+            usr_report = input("Please enter 'report' to generate full report or 'remove' to remove a document: ")
+            if usr_report == "report":
                 generate_report(db)
                 print("Report is generated")
+            elif usr_report == "remove":
+                target_doc = input("Please enter the title of the document to be removed: ")
+                remove_docs(db, target_doc)
             else:
-                pass
+                print("Invalid input -- exit the loop")
         elif selection == "exit":
             print(goodbye_message)
             return None
