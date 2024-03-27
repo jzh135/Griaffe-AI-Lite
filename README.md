@@ -1,4 +1,4 @@
-# 🦒 Griaffe AI Lite
+# 🦒 Griaffe AI Lite 🚀
 ### Welcome to Giraffe AI Lite! An AI powered personal knowledge base system.<br>
 <p>The heart of Giraffe AI Lite lies in its retrieval-augmented generation approach. By combining retrieval-based techniques with generative models, it achieves accurate and flexible information synthesis. This project is specifically tailored for individuals who have <strong>no experience in AI application development</strong> and <strong>lack access to high-performance computing resources</strong>. 
 <p>Here are its key features:<br>
