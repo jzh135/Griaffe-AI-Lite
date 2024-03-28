@@ -96,6 +96,6 @@ def chatbot_menu():
             print("\n> " + document.metadata["source"] + ":")
             print(document.page_content)
             print("--------------------------------------------------------------------------")
-
-print(welcome_message)
-main_menu()
+if __name__ == "__main__":
+    print(welcome_message)
+    main_menu()
